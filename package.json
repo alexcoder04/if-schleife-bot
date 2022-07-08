@@ -4,7 +4,7 @@
   "description": "our custom discord bot",
   "main": "index.js",
   "scripts": {
-      "run": "node ."
+      "start": "node ."
   },
   "author": "alexcoder04",
   "license": "GPL-3.0-or-later",
