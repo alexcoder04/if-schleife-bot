@@ -207,7 +207,7 @@ client.on("interactionCreate", async (interaction) => {
   }
   // }}}
 
-    // TODO temporarily
+  // TODO temporarily
   // shutdown {{{
   if (commandName == "shutdown") {
     if (!interaction.member.roles.cache.has(ADMIN_ROLE)) {
@@ -218,8 +218,7 @@ client.on("interactionCreate", async (interaction) => {
       return;
     }
     await interaction.reply({
-      content: "shutting if-schleife-bot down",
-      ephemeral: true,
+      content: `shutting if-schleife-bot down triggered by ${interaction.member.name}`,
     });
     shutdown();
     return;
