@@ -1,0 +1,16 @@
+{
+  "name": "if-schleife-bot",
+  "version": "1.0.0",
+  "description": "our custom discord bot",
+  "main": "index.js",
+  "scripts": {
+      "run": "node ."
+  },
+  "author": "alexcoder04",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "discord.js": "^13.8.1",
+    "dotenv": "^16.0.1"
+  },
+  "type": "module"
+}
