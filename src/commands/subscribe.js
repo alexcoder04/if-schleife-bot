@@ -1,4 +1,4 @@
-import { SlashCommandBuilder } from "@discordjs/builders"
+import { SlashCommandBuilder } from "@discordjs/builders";
 import { MessageEmbed } from "discord.js";
 
 /**
@@ -55,8 +55,8 @@ export default {
         const validLang = langProjMap.find(l => l.regex.test(selectedLang));
         if (validLang == null || validLang == undefined) {
             const languageNotFoundEmbed = new MessageEmbed()
-            .setDescription(`${selectedLang} is not in the list of supported languages.`)
-            .setColor("RED")
+                .setDescription(`${selectedLang} is not in the list of supported languages.`)
+                .setColor("RED");
             
             await interaction.editReply({ embeds: [languageNotFoundEmbed] });
             return;
@@ -66,20 +66,20 @@ export default {
         const role = await interaction.guild.roles.cache.find(r => validLang.regex.test(r.name));
         if (role == undefined) {
             const roleNotFoundEmbed = new MessageEmbed()
-            .setDescription(`No role was found for your requested language.`)
-            .setColor("RED")
+                .setDescription("No role was found for your requested language.")
+                .setColor("RED");
             
             await interaction.editReply({ embeds: [roleNotFoundEmbed] });
             return;
         }
 
         //Check if the user already has the role and if so unsubscribe them
-        const hasRole = interaction.member.roles.cache.find(r => role.id == r.id) != undefined
+        const hasRole = interaction.member.roles.cache.find(r => role.id == r.id) != undefined;
         if (hasRole) {
             interaction.member.roles.remove(role);
             const unsubscribeEmbed = new MessageEmbed()
-            .setDescription(`Unsubscribed you from ${role.name}`)
-            .setColor("GREY")
+                .setDescription(`Unsubscribed you from ${role.name}`)
+                .setColor("GREY");
             
             await interaction.editReply({ embeds: [unsubscribeEmbed] });
             return;
@@ -88,12 +88,12 @@ export default {
         //Otherwise subscribe them to it
         interaction.member.roles.add(role);
         const subscribeEmbed = new MessageEmbed()
-        .setDescription(`Subscribed you to ${role.name}`)
-        .setColor("GREY");
+            .setDescription(`Subscribed you to ${role.name}`)
+            .setColor("GREY");
         
         await interaction.editReply({ embeds: [subscribeEmbed] });
         return;
     },
     register: true
-}
+};
 

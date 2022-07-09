@@ -1,5 +1,5 @@
-import { Client, Intents, Collection } from "discord.js"
-import * as fs from "fs"
+import { Client, Intents, Collection } from "discord.js";
+import * as fs from "fs";
 import { getEnv } from "./utils/EnvUtils.js";
 
 //getenv currently not working...

@@ -23,8 +23,8 @@ const rest = new REST({ version: "9" }).setToken("");
         console.log("Started refreshing application (/) commands.");
         console.log(commands);
         if (commands.length == 0) {
-            console.log("No commands found.")
-            return
+            console.log("No commands found.");
+            return;
         }
         await rest.put(
             Routes.applicationCommands("995105397146927155"),

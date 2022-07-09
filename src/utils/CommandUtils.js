@@ -21,4 +21,4 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-export { getRoleByName, getRoleById, getUserById, sleep}
+export { getRoleByName, getRoleById, getUserById, sleep};
