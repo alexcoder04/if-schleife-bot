@@ -6,8 +6,6 @@
 
 <h2 align="center"><b>if-schleife-bot</b></h2>
 
-<hr>
-
 <h4 align="center"><b>Feature rich discord bot for the if-schleife discord server.</b></b></h4>
 
 <p align="center" style="margin-top: 20px;">
@@ -57,9 +55,19 @@
 
 ## Contribution
 
-<b>TBD</b>
+We are generally open for any kind of contributions, however, as this a project
+aimed for a specific Discord server, we will check if your idea makes sense in
+our case.
+
+Please note that the `main` branch is aimed for production, so all development
+happens in the `dev` branch.
 
 ## License
 [![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](https://www.gnu.org/licenses/gpl-3.0.en.html)  
 
-if-schleife-bot is Free Software: You can use, study, share, and improve it at will. Specifically you can redistribute and/or modify it under the terms of the [GNU General Public License](https://www.gnu.org/licenses/gpl.html) as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+if-schleife-bot is Free Software: You can use, study, share, and improve it at
+will. Specifically you can redistribute and/or modify it under the terms of the
+[GNU General Public License](https://www.gnu.org/licenses/gpl.html) as published
+by the Free Software Foundation, either version 3 of the License, or (at your
+option) any later version.
+
