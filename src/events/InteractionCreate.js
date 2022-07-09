@@ -1,4 +1,4 @@
-import { Logger } from "../utils/Logger";
+import { Logger } from "../utils/Logger.js";
 
 const lg = new Logger("InteractionCreate");
 

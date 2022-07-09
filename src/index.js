@@ -1,6 +1,6 @@
 import { Client, Intents, Collection } from "discord.js";
 import * as fs from "fs";
-import { config } from "dotenv";
+import "dotenv/config";
 import { Logger } from "./utils/Logger.js";
 
 const lg = new Logger("Index");

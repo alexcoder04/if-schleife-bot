@@ -1,8 +1,8 @@
 import { REST } from "@discordjs/rest";
 import { Routes } from "discord-api-types/v9";
 import * as fs from "fs";
-import { config } from "dotenv";
-import { Logger } from "winston";
+import "dotenv/config";
+import { Logger } from "./utils/Logger.js";
 
 const lg = new Logger("DeployCommands");
 
@@ -12,26 +12,23 @@ const token = process.env.TOKEN;
 const commands = [];
 const commandFiles = fs.readdirSync("./src/commands").filter(file => file.endsWith(".js"));
 
-lg.info(process.cwd());
-
 for (const file of commandFiles) {
     const command = (await import(`../src/commands/${file}`)).default;
-    lg.info(command);
     if (command.register) commands.push(command.data.toJSON());
 }
 
-const rest = new REST({ version: "9" }).setToken("");
+const rest = new REST({ version: "9" }).setToken(token);
 
 (async () => {
     try {
         lg.info("Started refreshing application (/) commands.");
-        lg.info(commands);
+        console.log(commands);
         if (commands.length == 0) {
             lg.info("No commands found.");
             return;
         }
         await rest.put(
-            Routes.applicationCommands("995105397146927155"),
+            Routes.applicationCommands(clientId),
             { body: commands },
         );
 
