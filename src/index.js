@@ -1,23 +1,27 @@
 import { Client, Intents, Collection } from "discord.js";
 import * as fs from "fs";
-import { getEnv } from "./utils/EnvUtils.js";
+import { config } from "dotenv";
+import { Logger } from "./utils/Logger.js";
+
+const lg = new Logger("Index");
 
 //getenv currently not working...
-const TOKEN = getEnv("TOKEN");
+const TOKEN = process.env.TOKEN;
 
 const client = new Client({intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],});
 client.commands = new Collection();
-const commandsFiles = fs.readdirSync("./src/commands").filter(file => file.endsWith(".js"));
 
 /**
  * Registering all the commands in the ./src/commands
  * directory to be executed when an interaction is created.
  */
+lg.info("[Commands]");
+const commandsFiles = fs.readdirSync("./src/commands").filter(file => file.endsWith(".js"));
 for (const file of commandsFiles) {
     const command = (await import(`./commands/${file}`)).default;
     if (command.register) {
         client.commands.set(command.data.name, command);
-        console.log(`Registering the command: ${command.data.name}`);
+        lg.info(`Registering the command: ${command.data.name}`);
     }
 }
 
@@ -26,18 +30,21 @@ for (const file of commandsFiles) {
  * directory to be called by the client.on or client.once 
  * function when an event is received.
  */
+lg.info("[Events]");
 const eventFiles = fs.readdirSync("./src/events").filter(file => file.endsWith(".js"));
 for (const file of eventFiles) {
     const event = (await import(`./events/${file}`)).default;
     if (event.once) {
         client.once(event.name, (...args) => event.execute(...args));
+        lg.info(`Registered Event once${file.replace(".js", "")}`);
     } else {
         client.on(event.name, (...args) => event.execute(...args));
+        lg.info(`Registered Event on${file.replace(".js", "")}`);
     }
 }
 
 client.once("ready", () => {
-    console.log("Started the bot!");
+    lg.info("Started the bot!");
 });
 
-client.login("");
+client.login(TOKEN);
