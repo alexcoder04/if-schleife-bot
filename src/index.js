@@ -1,18 +1,13 @@
 import { Client, Intents, Collection } from "discord.js"
 import * as fs from "fs"
-import { getBuildID } from "./utils/CommandUtils.js";
 import { getEnv } from "./utils/EnvUtils.js";
 
 //getenv currently not working...
-const OUR_GUILD = getEnv("OUR_GUILD_ID");
-const ADMIN_ROLE = getEnv("ADMIN_ROLE_ID");
 const TOKEN = getEnv("TOKEN");
 
 const client = new Client({intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],});
 client.commands = new Collection();
 const commandsFiles = fs.readdirSync("./src/commands").filter(file => file.endsWith(".js"));
-
-console.log(await getBuildID());
 
 /**
  * Registering all the commands in the ./src/commands
