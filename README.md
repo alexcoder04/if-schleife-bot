@@ -1,3 +1,5 @@
+
+![workflow](https://github.com/CuzImClicks/if-schleife-bot/actions/workflows/eslint.yml/badge.svg)
 # if-schleife-bot
 Discord bot for our server
 
