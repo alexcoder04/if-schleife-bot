@@ -6,5 +6,4 @@ RUN npm install
 RUN apk add git
 RUN apk update
 COPY . .
-EXPOSE 3000
 CMD ["npm", "run", "start"]

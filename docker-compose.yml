@@ -1,0 +1,19 @@
+version: "3"
+services:
+  api: 
+    image: cuzimclicks/server
+    build: .
+    networks: 
+      - backend
+    ports:
+      - "3000:3000"
+
+  web-cli:
+    image: cuzimclicks/server
+    networks:
+      - backend
+    command: sh
+
+networks:
+  backend: 
+    driver: bridge
