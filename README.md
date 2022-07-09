@@ -7,12 +7,6 @@
 
 <h4 align="center"><b>Feature rich discord bot for the if-schleife discord server.</b></b></h4>
 
-<p align="center" style="margin-top: 20px;">
-    <a href="https://discord.gg/3YdAvPytu2">
-        <img src="https://intua.net/forums/uploads/editor/5l/4wb14iea8olt.png" width="300">
-    </a>
-</p>
-
 <p align="center">
     <a href="https://www.gnu.org/licenses/gpl-3.0" alt="License: GPLv3">
         <img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg">
@@ -72,3 +66,4 @@ will. Specifically you can redistribute and/or modify it under the terms of the
 [GNU General Public License](https://www.gnu.org/licenses/gpl.html) as published
 by the Free Software Foundation, either version 3 of the License, or (at your
 option) any later version.
+
