@@ -5,7 +5,6 @@ import { Logger } from "./utils/Logger.js";
 
 const lg = new Logger("Index");
 
-//getenv currently not working...
 const TOKEN = process.env.TOKEN;
 
 const client = new Client({intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],});
