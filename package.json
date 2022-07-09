@@ -4,7 +4,9 @@
   "description": "our custom discord bot",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "deployCommands": "node ./src/deploy-commands.js",
+    "lint": "npx eslint ."
   },
   "author": "alexcoder04",
   "license": "GPL-3.0-or-later",
