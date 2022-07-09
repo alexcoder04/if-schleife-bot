@@ -49,8 +49,11 @@
 <b>TBD</b>
 
 ## Installation and updates
+Build the docker application
+> `docker build -t if-schleife-bot .`
 
-<b>TBD</b>
+Run the docker application
+> `docker run if-schleife-bot`
 
 ## Contribution
 
