@@ -10,6 +10,6 @@ Discord bot for our server
 - [ ] Commands
     - [ ] beep -> boop
     - [ ] shutdown?
-- [ ] Test docker image for the deployment on school server
-- [ ] Add github actions for eslint
+- [x] Test docker image for the deployment on school server
+- [x] Add github actions for eslint
 </details>
