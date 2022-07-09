@@ -1,7 +1,6 @@
+
 <p align="center">
-    <a href="">
-        <img src="https://www.namijda.de/images/product_images/popup_images/kobalt_10.jpg" width="150">
-    </a>
+    <img src="https://www.namijda.de/images/product_images/popup_images/kobalt_10.jpg" width="150">
 </p>
 
 <h2 align="center"><b>if-schleife-bot</b></h2>
@@ -26,6 +25,9 @@
     </a>
     <a href="https://github.com/alexcoder04/if-schleife-bot/commits/" alt="GitHub release">
         <img src="https://img.shields.io/github/commit-activity/m/alexcoder04/if-schleife-bot" >
+    </a>
+    <a href="https://github.com/alexcoder04/if-schleife-bot/actions">
+        <img src="https://github.com/alexcoder04/if-schleife-bot/actions/workflows/eslint.yml/badge.svg" >
     </a>
 </p>
 
@@ -70,4 +72,3 @@ will. Specifically you can redistribute and/or modify it under the terms of the
 [GNU General Public License](https://www.gnu.org/licenses/gpl.html) as published
 by the Free Software Foundation, either version 3 of the License, or (at your
 option) any later version.
-

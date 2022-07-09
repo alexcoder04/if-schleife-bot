@@ -4,13 +4,21 @@
   "description": "our custom discord bot",
   "main": "index.js",
   "scripts": {
-      "start": "node ."
+    "start": "node src/index.js",
+    "deployCommands": "node ./src/deploy-commands.js",
+    "lint": "npx eslint ."
   },
   "author": "alexcoder04",
   "license": "GPL-3.0-or-later",
   "dependencies": {
+    "@discordjs/builders": "^0.15.0",
+    "@discordjs/rest": "^0.5.0",
+    "discord-api-types": "^0.36.1",
     "discord.js": "^13.8.1",
     "dotenv": "^16.0.1"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "eslint": "^8.19.0"
+  }
 }
