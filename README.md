@@ -23,6 +23,9 @@
     <a href="https://github.com/alexcoder04/if-schleife-bot/actions">
         <img src="https://github.com/alexcoder04/if-schleife-bot/actions/workflows/eslint.yml/badge.svg" >
     </a>
+    <a href="https://github.com/alexcoder04/if-schleife-bot/graphs/code-frequency" target="_blank">
+        <img src="https://img.shields.io/tokei/lines/github/alexcoder04/if-schleife-bot?label=lines&color=informational&logo=GitHub" alt="lines">
+    </a>
 </p>
 
 <hr>
@@ -46,8 +49,11 @@
 <b>TBD</b>
 
 ## Installation and updates
+Build the docker application
+> `docker build -t if-schleife-bot .`
 
-<b>TBD</b>
+Run the docker application
+> `docker run if-schleife-bot`
 
 ## Contribution
 
