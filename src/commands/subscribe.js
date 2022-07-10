@@ -5,7 +5,7 @@ import { MessageEmbed } from "discord.js";
  * A map of all supported languages with their name and a regex for 
  * different written and spoken versions of their name. 
  */
-const langProjMap = [
+export const langProjMap = [
     {
         name: "C++",
         regex: /C(\+\+|pp|PP)/i,
@@ -43,6 +43,7 @@ export default {
         .addStringOption(option => option.setName("language")
             .setDescription("The language you want to be (un)subscribed to/from.")
             .setRequired(true)
+            .setAutocomplete(true)
         ),
     execute: async function execute(interaction) {
         //Get the language from the interaction options

@@ -11,7 +11,8 @@
     "rules": {
         "indent": [
             "error",
-            4
+            4,
+            { "SwitchCase": 1}
         ],
         "quotes": [
             "error",
@@ -22,6 +23,7 @@
             "error",
             "always"
         ],
-        "no-unused-vars": "off"
+        "no-unused-vars": "off",
+        "camelcase": "error"
     }
 }
