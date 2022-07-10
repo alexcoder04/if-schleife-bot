@@ -64,6 +64,19 @@ our case.
 Please note that the `main` branch is aimed for production, so all development
 happens in the `dev` branch.
 
+To contribute to the dev branch first:
+Clone the repo
+
+`git clone https://github.com/alexcoder04/if-schleife-bot`
+
+Check to see all branches
+
+`git branch -a`
+
+Switch to the correct branch you want to contribute to
+
+`git checkout dev`
+
 ## License
 [![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](https://www.gnu.org/licenses/gpl-3.0.en.html)  
 
