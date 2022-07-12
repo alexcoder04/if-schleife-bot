@@ -1,1 +1,1 @@
-worker: node src/index.js
+worker: sh -c "npm run deployCommands && exec npm run start"
