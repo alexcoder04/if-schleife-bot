@@ -15,7 +15,7 @@ export const langProjMap = [
         regex: /C(#|S)/i,
     },
     {
-        name: "Go",
+        name: "Golang",
         regex: /Go(lang)?/i,
     },
     {
@@ -28,12 +28,24 @@ export const langProjMap = [
     },
     {
         name: "HTML / CSS / JavaScript",
-        regex: /(Html|HTML)|(CSS|css)|(js|JS|Javascript)|(Web(dev)?)/i,
+        regex: /(HTML|html)|(CSS|css)|(js|JS|Javascript)|(Web(dev)?)/i,
     },
     {
         name: "LeoConsole",
         regex: /(LeoConsole|LC|lc)/i,
     },
+    {
+        name: "Shell",
+        regex: /(Shell|Bash|Posix|POSIX)/i,
+    },
+    {
+        name: "Bot",
+        regex: /(Discord)?-?Bot/i,
+    },
+    {
+        name: "Machine Learning",
+        regex: /(ML|Machine-?Learning)/i,
+    }
 ];
 
 export default {
