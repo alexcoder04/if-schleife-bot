@@ -23,12 +23,13 @@ export class Logger {
         this.#lg = winston.createLogger({
             level: loggingLevel, //the logging level (default is info) [error, warn, help, data, info, debug, prompt, http, verbose, input, silly]
             transports: [
-                new winston.transports.File({ filename: "./logs/latest.txt", level: "info", options: { flags: "w" }}),
+                new winston.transports.File({ filename: "./logs/latest.txt", level: "info", options: { flags: "w" }}), //FIXME binary or unsupported file encoding
                 new winston.transports.Console(),
                 this.transport
             ],
             format: combine(
                 label({ label: this.name}),
+                winston.format.json(),
                 timestamp({
                     format: "HH:mm:ss"
                 }),
@@ -72,7 +73,8 @@ export class Logger {
 winston.createLogger({
     level: "error",
     transports: [
-        new winston.transports.File({ filename: "./logs/error.log", level: "error", handleExceptions: true, options: { flags: "w" } })
+        new winston.transports.File({ filename: "./logs/error.log", level: "error", handleExceptions: true, options: { flags: "w" } }),
+        new winston.transports.Console()
     ],
     format: combine(
         label({ label: "ERROR"}),
