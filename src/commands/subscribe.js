@@ -8,7 +8,7 @@ import { MessageEmbed } from "discord.js";
 export const langProjMap = [
     {
         name: "C++",
-        regex: /C(\+\+|pp|PP)/i,
+        regex: /C(\+\+|PP)/i,
     },
     {
         name: "C#",
@@ -20,7 +20,7 @@ export const langProjMap = [
     },
     {
         name: "Java+Kotlin",
-        regex: /(Java|Kotlin)/i,
+        regex: /Java|Kotlin/i,
     },
     {
         name: "Python",
@@ -28,23 +28,23 @@ export const langProjMap = [
     },
     {
         name: "HTML / CSS / JavaScript",
-        regex: /(HTML|html)|(CSS|css)|(js|JS|Javascript)|(Web(dev)?)/i,
+        regex: /HTML|CSS|JS|Javascript|(Web(dev)?)/i,
     },
     {
         name: "LeoConsole",
-        regex: /(LeoConsole|LC|lc)/i,
+        regex: /LeoConsole|LC/i,
     },
     {
         name: "Shell",
-        regex: /(Shell|Bash|Posix|POSIX)/i,
+        regex: /Shell|Bash|POSIX/i,
     },
     {
         name: "Bot",
-        regex: /(Discord)?-?Bot/i,
+        regex: /(Discord)?[\s-]?Bot/i,
     },
     {
         name: "Machine Learning",
-        regex: /(ML|Machine-?Learning)/i,
+        regex: /ML|Machine[\s-]?Learning/i,
     }
 ];
 
