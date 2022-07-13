@@ -13,7 +13,7 @@ import schleife.utils.slashcommands.SlashCommandManager
 
 fun main() {
 
-    val bot: JDA = JDABuilder.createDefault("OTk1MTA1Mzk3MTQ2OTI3MTU1.GmIQE6.1Pl1hrZvnejmoOTPJ-AAr4umREHMFXSM5mew2w").build()
+    val bot: JDA = JDABuilder.createDefault("").build()
 
     bot.addEventListener(MessageReceiveListener)
     bot.addEventListener(SlashCommandListener)
