@@ -22,7 +22,6 @@ const rest = new REST({ version: "9" }).setToken(token);
 (async () => {
     try {
         lg.info("Started refreshing application (/) commands.");
-        console.log(commands);
         if (commands.length == 0) {
             lg.info("No commands found.");
             return;
