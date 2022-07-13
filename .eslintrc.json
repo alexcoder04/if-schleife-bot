@@ -24,6 +24,14 @@
             "always"
         ],
         "no-unused-vars": "off",
-        "camelcase": "error"
+        "camelcase": "error",
+        "no-console": [
+            "warn",
+            {
+                "allow": [
+                    "error"
+                ]
+            }
+        ]
     }
 }
