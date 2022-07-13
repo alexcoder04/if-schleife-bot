@@ -21,10 +21,10 @@
         <img src="https://img.shields.io/github/commit-activity/m/alexcoder04/if-schleife-bot" >
     </a>
     <a href="https://github.com/alexcoder04/if-schleife-bot/actions">
-        <img src="https://github.com/alexcoder04/if-schleife-bot/actions/workflows/eslint.yml/badge.svg" >
+        <img src="https://github.com/alexcoder04/if-schleife-bot/actions/workflows/gradle.yml/badge.svg?branch=kotlin" >
     </a>
     <a href="https://github.com/alexcoder04/if-schleife-bot/graphs/code-frequency" target="_blank">
-        <img src="https://img.shields.io/tokei/lines/github/alexcoder04/if-schleife-bot?label=lines&color=informational&logo=GitHub" alt="lines">
+        <img src="https://img.shields.io/tokei/lines/github/alexcoder04/if-schleife-bot?label=lines&color=informational&logo=GitHub?branch=kotlin" alt="lines">
     </a>
 </p>
 
@@ -42,7 +42,7 @@
 
 ## Description
 
-<b>TBD</b>
+This is a kotlin version of the bot that is way more fun to code in
 
 ### Features
 
