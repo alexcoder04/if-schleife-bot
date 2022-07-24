@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "deployCommands": "node ./src/deploy-commands.js",
+    "crashNotify": "node ./src/crash-notification.js",
     "lint": "npx eslint ."
   },
   "author": "alexcoder04",

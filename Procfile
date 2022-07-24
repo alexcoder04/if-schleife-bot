@@ -1,1 +1,1 @@
-worker: sh -c "npm run deployCommands && exec npm run start"
+worker: sh -c "npm run deployCommands && npm run start || npm run crashNotify"
