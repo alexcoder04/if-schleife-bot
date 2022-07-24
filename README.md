@@ -42,13 +42,18 @@
 
 ## Description
 
-<b>TBD</b>
+This is the bot that helps us to manage our Discord server. Although our server
+is private (for now), we decided to open-source our bot because *why not*. You
+are welcome to study the code and use it for your own server if you want to (we
+will appreciate if you credit us in that case).
 
 ### Features
 
-<b>TBD</b>
+ - assign project-/topic-specific roles with the `/subscribe` command
+ - silence channels (`/dev/null` emulation :))
 
 ## Installation and updates
+
 Build the docker application
 > `docker build -t if-schleife-bot .`
 
@@ -78,6 +83,7 @@ Switch to the correct branch you want to contribute to
 `git checkout dev`
 
 ## License
+
 [![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](https://www.gnu.org/licenses/gpl-3.0.en.html)  
 
 if-schleife-bot is Free Software: You can use, study, share, and improve it at
