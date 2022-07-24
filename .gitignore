@@ -33,3 +33,6 @@ node_modules/
 # vscode settings
 .vscode
 
+# silenced channels list
+silenced.json
+

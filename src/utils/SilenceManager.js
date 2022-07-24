@@ -1,4 +1,4 @@
-import { readJsonFile, writeJsonFile } from "./FileUtils";
+import { readJsonFile, writeJsonFile } from "./FileUtils.js";
 
 class SilenceManager {
 
