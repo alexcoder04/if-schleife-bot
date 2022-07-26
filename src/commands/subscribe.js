@@ -36,7 +36,7 @@ export const langProjMap = [
     },
     {
         name: "Shell",
-        regex: /Shell|Bash|POSIX/i,
+        regex: /(POSIX)?[\s-]?Shell|Bash/i,
     },
     {
         name: "Bot",
@@ -44,7 +44,7 @@ export const langProjMap = [
     },
     {
         name: "Machine Learning",
-        regex: /ML|Machine[\s-]?Learning/i,
+        regex: /Machine[\s-]?Learning/i,
     }
 ];
 
@@ -79,7 +79,7 @@ export default {
         const role = await interaction.guild.roles.cache.find(r => validLang.regex.test(r.name));
         if (role == undefined) {
             const roleNotFoundEmbed = new MessageEmbed()
-                .setDescription("No role was found for your requested language.")
+                .setDescription(`No role was found for ${validLang.name}.`)
                 .setColor("RED");
             
             await interaction.editReply({ embeds: [roleNotFoundEmbed] });
