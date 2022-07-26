@@ -3,11 +3,13 @@ version: 2
 updates:
   - package-ecosystem: "npm"
     directory: "/"
+    target-branch: "dev"
     schedule:
       interval: "weekly"
 
   - package-ecosystem: "docker"
     directory: "/"
+    target-branch: "dev"
     schedule:
         interval: "weekly"
 
