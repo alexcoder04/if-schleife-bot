@@ -1,56 +1,9 @@
 import { SlashCommandBuilder } from "@discordjs/builders";
 import { MessageEmbed } from "discord.js";
+import { rolesMap } from "../utils/RolesMap.js";
+import { Logger } from "../utils/Logger.js";
 
-/**
- * A map of all supported languages with their name and a regex for 
- * different written and spoken versions of their name. 
- */
-export const langProjMap = [
-    {
-        name: "C++",
-        regex: /^C(\+\+|PP)/i,
-    },
-    {
-        name: "C#",
-        regex: /^C(#|S)/i,
-    },
-    {
-        name: "Golang",
-        regex: /^Go(lang)?/i,
-    },
-    {
-        name: "Java+Kotlin",
-        regex: /^Java|^Kotlin|^Java.?Kotlin/i,
-    },
-    {
-        name: "Python",
-        regex: /^Py(thon)?/i,
-    },
-    {
-        name: "HTML / CSS / JavaScript",
-        regex: /^HTML|^CSS|^JS|^Javascript|^Web(dev)?/i,
-    },
-    {
-        name: "LeoConsole",
-        regex: /^LeoConsole|^LC/i,
-    },
-    {
-        name: "Shell",
-        regex: /^(POSIX)?[\s-]?Shell|^Bash/i,
-    },
-    {
-        name: "Git(Hub) / Editor / IDE / Setup / etc",
-        regex: /^Git(Hub)?|^Editor|^IDE|^Setup|^Productivity|^Desktop/i,
-    },
-    {
-        name: "Bot",
-        regex: /^(Discord)?[\s-]?Bot/i,
-    },
-    {
-        name: "Machine Learning",
-        regex: /^Machine[\s-]?Learning/i,
-    }
-];
+const lg = new Logger("Subscribe");
 
 export default {
     data: new SlashCommandBuilder()
@@ -69,7 +22,7 @@ export default {
         await interaction.deferReply({ ephemeral: true });
         
         //Find the language in the list of languages
-        const validLang = langProjMap.find(l => l.regex.test(selectedLang));
+        const validLang = rolesMap.find(l => l.regex.test(selectedLang));
         if (validLang == null || validLang == undefined) {
             const languageNotFoundEmbed = new MessageEmbed()
                 .setDescription(`${selectedLang} is not in the list of supported languages.`)
@@ -99,6 +52,7 @@ export default {
                 .setColor("GREY");
             
             await interaction.editReply({ embeds: [unsubscribeEmbed] });
+            lg.info(`removed ${interaction.member.id} from ${role.name}`);
             return;
         }
         
@@ -109,6 +63,7 @@ export default {
             .setColor("GREY");
         
         await interaction.editReply({ embeds: [subscribeEmbed] });
+        lg.info(`added ${interaction.member.id} to ${role.name}`);
         return;
     },
     register: true
