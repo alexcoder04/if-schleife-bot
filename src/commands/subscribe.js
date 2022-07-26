@@ -39,6 +39,10 @@ export const langProjMap = [
         regex: /^(POSIX)?[\s-]?Shell|^Bash/i,
     },
     {
+        name: "Git(Hub) / Editor / IDE / Setup / etc",
+        regex: /^Git(Hub)?|^Editor|^IDE|^Setup|^Productivity|^Desktop/i,
+    },
+    {
         name: "Bot",
         regex: /^(Discord)?[\s-]?Bot/i,
     },
