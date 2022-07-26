@@ -52,7 +52,7 @@ export default {
                 .setColor("GREY");
             
             await interaction.editReply({ embeds: [unsubscribeEmbed] });
-            lg.info(`removed ${interaction.member.id} from ${role.name}`);
+            lg.info(`Removed ${interaction.member.id} from ${role.name}`);
             return;
         }
         
@@ -63,7 +63,7 @@ export default {
             .setColor("GREY");
         
         await interaction.editReply({ embeds: [subscribeEmbed] });
-        lg.info(`added ${interaction.member.id} to ${role.name}`);
+        lg.info(`Added ${interaction.member.id} to ${role.name}`);
         return;
     },
     register: true
