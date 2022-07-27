@@ -15,13 +15,14 @@ export default {
             .setAutocomplete(true)
         ),
     execute: async function execute(interaction) {
+        //Defer the reply so we can take as much time as we need
+        await interaction.deferReply({ ephemeral: true });
 
         if (!interaction.member.roles.cache.some(role => role.name === "Member")){
-            await interaction.deferReply({ ephemeral: true });
-
             const rulesChannel = await interaction.guild.channels.cache.find(c => c.name == "rules");
             const acceptRulesEmbed = new MessageEmbed()
                 .setDescription(`You are not a member yet. Please accept the rules in ${channelMention(rulesChannel.id)}`);
+
             await interaction.editReply({ embeds: [acceptRulesEmbed] });
             return;
         }
@@ -29,9 +30,6 @@ export default {
         //Get the language from the interaction options
         const selectedLang = interaction.options.getString("language");
 
-        //Defer the reply so we can take as much time as we need
-        await interaction.deferReply({ ephemeral: true });
-        
         //Find the language in the list of languages
         const validLang = rolesMap.find(l => l.regex.test(selectedLang));
         if (validLang == null || validLang == undefined) {
