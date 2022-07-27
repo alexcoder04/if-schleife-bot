@@ -1,4 +1,4 @@
-import { SlashCommandBuilder } from "@discordjs/builders";
+import { channelMention, SlashCommandBuilder } from "@discordjs/builders";
 import { MessageEmbed } from "discord.js";
 import { rolesMap } from "../utils/RolesMap.js";
 import { Logger } from "../utils/Logger.js";
@@ -15,6 +15,17 @@ export default {
             .setAutocomplete(true)
         ),
     execute: async function execute(interaction) {
+
+        if (!interaction.member.roles.cache.some(role => role.name === "Member")){
+            await interaction.deferReply({ ephemeral: true });
+
+            const rulesChannel = await interaction.guild.channels.cache.find(c => c.name == "rules");
+            const acceptRulesEmbed = new MessageEmbed()
+                .setDescription(`You are not a member yet. Please accept the rules in ${channelMention(rulesChannel.id)}`);
+            await interaction.editReply({ embeds: [acceptRulesEmbed] });
+            return;
+        }
+
         //Get the language from the interaction options
         const selectedLang = interaction.options.getString("language");
 

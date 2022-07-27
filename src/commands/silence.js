@@ -17,6 +17,14 @@ export default {
                 .setRequired(false)
         ),
     execute: async function execute(interaction) {
+        if (!interaction.member.roles.cache.some(role => role.name === "Admin")) {
+            await interaction.deferReply({ ephemeral: true });
+            await interaction.editReply({ embeds: [new MessageEmbed()
+                .setDescription("You don't have the permission to silence this channel")
+                .setColor("RED")] });
+            return;
+        }
+
         var channel = interaction.options.getChannel("channel");
         
         if (channel == null || channel == undefined) {
