@@ -36,8 +36,8 @@ export const rolesMap = [
         regex: /^(POSIX)?[\s-]?Shell|^Bash/i,
     },
     {
-        name: "Git(Hub) / Editor / IDE / Setup / etc",
-        regex: /^Git(Hub)?|^Editor|^IDE|^Setup|^Productivity|^Desktop/i,
+        name: "Software Help",
+        regex: /^Git(Hub)?|^Editor|^IDE|^Software([\s-]Help)?/i,
     },
     {
         name: "Bot",
