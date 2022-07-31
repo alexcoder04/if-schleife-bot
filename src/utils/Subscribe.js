@@ -2,21 +2,17 @@ import { channelMention } from "@discordjs/builders";
 import { EmbedBuilder, Colors } from "discord.js";
 import { rolesMap } from "./RolesMap.js";
 import { Logger } from "./Logger.js";
+import checkPermission from "./Permission.js";
 
 const lg = new Logger("Subscribe");
 
 async function subscribe(selectedLang, interaction) {
-    //Defer the reply so we can take as much time as we need
-    await interaction.deferReply({ ephemeral: true });
-
-    if (!interaction.member.roles.cache.some(role => role.name === "Member")){
-        const rulesChannel = await interaction.guild.channels.cache.find(c => c.name === "rules");
-        const acceptRulesEmbed = new EmbedBuilder()
-            .setDescription(`You are not a member yet. Please accept the rules in ${channelMention(rulesChannel.id)}`);
-
-        await interaction.editReply({ embeds: [acceptRulesEmbed] });
+    if (!(await checkPermission(interaction, "Member"))) {
         return;
     }
+
+    //Defer the reply so we can take as much time as we need
+    await interaction.deferReply({ ephemeral: true });
 
     //Find the language in the list of languages
     const validLang = rolesMap.find(l => l.regex.test(selectedLang));
@@ -49,7 +45,7 @@ async function subscribe(selectedLang, interaction) {
             .setColor(Colors.White);
         
         await interaction.editReply({ embeds: [unsubscribeEmbed] });
-        lg.info(`Removed ${interaction.member.id} from ${role.name}`);
+        lg.info(`Removed ${interaction.member.displayName} from ${role.name}`);
         return;
     }
     
@@ -60,7 +56,7 @@ async function subscribe(selectedLang, interaction) {
         .setColor(Colors.White);
     
     await interaction.editReply({ embeds: [subscribeEmbed] });
-    lg.info(`Added ${interaction.member.id} to ${role.name}`);
+    lg.info(`Added ${interaction.member.displayName} to ${role.name}`);
     return;
 }
 

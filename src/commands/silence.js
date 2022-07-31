@@ -2,6 +2,7 @@ import { channelMention, SlashCommandBuilder } from "@discordjs/builders";
 import { EmbedBuilder, Colors } from "discord.js";
 import { Logger } from "../utils/Logger.js";
 import silenceManager from "../utils/SilenceManager.js";
+import checkPermission from "../utils/Permission.js";
 import contains from "../utils/Utils.js";
 
 const lg = new Logger("Silence");
@@ -17,12 +18,7 @@ export default {
         ),
 
     execute: async function execute(interaction) {
-        if (!interaction.member.roles.cache.some(role => role.name === "Admin")) {
-            await interaction.deferReply({ ephemeral: true });
-
-            await interaction.editReply({ embeds: [new EmbedBuilder()
-                .setDescription("You don't have the permission to silence this channel")
-                .setColor(Colors.Red)] });
+        if (!(await checkPermission(interaction, "Admin"))){
             return;
         }
 
