@@ -64,4 +64,4 @@ async function subscribe(selectedLang, interaction) {
     return;
 }
 
-export default { subscribe };
+export { subscribe };
