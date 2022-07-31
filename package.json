@@ -1,10 +1,11 @@
 {
   "name": "if-schleife-bot",
   "version": "1.0.0",
-  "description": "our custom discord bot",
+  "description": "custom bot for the if-schleife discord server",
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
+    "devStart": "nodemon src/index.js",
     "deployCommands": "node ./src/deploy-commands.js",
     "crashNotify": "node ./src/crash-notification.js",
     "lint": "npx eslint ."
@@ -14,7 +15,7 @@
   "dependencies": {
     "@discordjs/builders": "^0.15.0",
     "@discordjs/rest": "^0.5.0",
-    "discord-api-types": "^0.36.1",
+    "discord-api-types": "^0.36.3",
     "discord.js": "^13.8.1",
     "dotenv": "^16.0.1",
     "winston": "^3.8.1",
@@ -22,6 +23,6 @@
   },
   "type": "module",
   "devDependencies": {
-    "eslint": "^8.19.0"
+    "eslint": "^8.20.0"
   }
 }

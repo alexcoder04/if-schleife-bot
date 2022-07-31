@@ -6,7 +6,10 @@ export default {
         .setName("beep")
         .setDescription("Boop"),
     execute: async function execute(interaction) {
-        await interaction.reply({ embeds: [new MessageEmbed().setDescription("Boop!")], ephemeral: true });
+        await interaction.reply({
+            embeds: [new MessageEmbed().setTitle("Boop!")],
+            ephemeral: true
+        });
     },
     register: true
 };

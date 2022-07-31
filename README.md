@@ -1,6 +1,6 @@
 
 <p align="center">
-    <img src="https://www.namijda.de/images/product_images/popup_images/kobalt_10.jpg" width="150">
+    <img src="https://www.namijda.de/images/product_images/popup_images/kobalt_10.jpg" width="150" style="border-radius: 20px;">
 </p>
 
 <h2 align="center"><b>if-schleife-bot</b></h2>
@@ -8,27 +8,34 @@
 <h4 align="center"><b>Feature rich discord bot for the if-schleife discord server.</b></b></h4>
 
 <p align="center">
-    <a href="https://www.gnu.org/licenses/gpl-3.0" alt="License: GPLv3">
-        <img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg">
+    <a href="https://www.gnu.org/licenses/gpl-3.0" target="_blank">
+        <img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg" alt="license: gplv3">
     </a>
-    <a href="https://github.com/alexcoder04/if-schleife-bot/issues" alt="GitHub release">
-        <img src="https://img.shields.io/github/issues/alexcoder04/if-schleife-bot" >
+    <a href="https://github.com/alexcoder04/if-schleife-bot/issues">
+        <img src="https://img.shields.io/github/issues/alexcoder04/if-schleife-bot" alt="issues">
     </a>
-    <a href="https://github.com/alexcoder04/if-schleife-bot/pulls" alt="GitHub release">
-        <img src="https://img.shields.io/github/issues-pr/alexcoder04/if-schleife-bot" >
+    <a href="https://github.com/alexcoder04/if-schleife-bot/pulls">
+        <img src="https://img.shields.io/github/issues-pr/alexcoder04/if-schleife-bot" alt="pull requests">
     </a>
-    <a href="https://github.com/alexcoder04/if-schleife-bot/commits/" alt="GitHub release">
-        <img src="https://img.shields.io/github/commit-activity/m/alexcoder04/if-schleife-bot" >
+    <a href="https://github.com/alexcoder04/if-schleife-bot/stargazers">
+        <img src="https://img.shields.io/github/stars/alexcoder04/if-schleife-bot?logo=GitHub" alt="stars">
     </a>
-    <a href="https://github.com/alexcoder04/if-schleife-bot/actions">
-        <img src="https://github.com/alexcoder04/if-schleife-bot/actions/workflows/eslint.yml/badge.svg" >
+    <a href="https://github.com/alexcoder04/if-schleife-bot/graphs/contributors">
+        <img src="https://img.shields.io/github/contributors-anon/alexcoder04/if-schleife-bot" alt="contributors">
+    </a>
+    <a href="https://github.com/alexcoder04/if-schleife-bot/commits/">
+        <img src="https://img.shields.io/github/commit-activity/m/alexcoder04/if-schleife-bot" alt="commits">
     </a>
     <a href="https://github.com/alexcoder04/if-schleife-bot/graphs/code-frequency" target="_blank">
-        <img src="https://img.shields.io/tokei/lines/github/alexcoder04/if-schleife-bot?label=lines&color=informational&logo=GitHub" alt="lines">
+        <img src="https://img.shields.io/tokei/lines/github/alexcoder04/if-schleife-bot?label=lines&color=informational&logo=GitHub">
+    </a>
+    <a href="https://github.com/alexcoder04/if-schleife-bot/actions">
+        <img src="https://github.com/alexcoder04/if-schleife-bot/actions/workflows/eslint.yml/badge.svg" alt="workflow: eslint">
+    </a>
+    <a href="https://github.com/alexcoder04/if-schleife-bot/network/dependencies">
+        <img src="https://badgen.net/github/dependabot/alexcoder04/if-schleife-bot?icon=github" alt="dependabot status">
     </a>
 </p>
-
-<hr>
 
 <p align="center">
     <a href="#description">Description</a> &bull; 
@@ -49,8 +56,10 @@ will appreciate if you credit us in that case).
 
 ### Features
 
- - assign project-/topic-specific roles with the `/subscribe` command
- - silence channels (`/dev/null` emulation :))
+ - assign project-/topic-specific roles with `/subscribe`
+ - list all available roles with `/roleslist`
+ - silence channels with `/silence` (`/dev/null` emulation :))
+ - notification via webhooks if the bot crashed
 
 ## Installation and updates
 
