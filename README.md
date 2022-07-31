@@ -1,6 +1,6 @@
 
 <p align="center">
-    <img src="https://www.namijda.de/images/product_images/popup_images/kobalt_10.jpg" width="150" style="border-radius: 15px;">
+    <img src="https://www.namijda.de/images/product_images/popup_images/kobalt_10.jpg" width="150" style="border-radius: 20px;">
 </p>
 
 <h2 align="center"><b>if-schleife-bot</b></h2>
