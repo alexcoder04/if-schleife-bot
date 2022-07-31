@@ -1,5 +1,5 @@
 import { SlashCommandBuilder } from "@discordjs/builders";
-import { MessageEmbed } from "discord.js";
+import { EmbedBuilder, Colors } from "discord.js";
 
 export default {
     data: new SlashCommandBuilder()
@@ -7,7 +7,9 @@ export default {
         .setDescription("Boop"),
     execute: async function execute(interaction) {
         await interaction.reply({
-            embeds: [new MessageEmbed().setTitle("Boop!")],
+            embeds: [ new EmbedBuilder()
+                .setTitle("Boop!")
+                .setColor(Colors.White) ],
             ephemeral: true
         });
     },

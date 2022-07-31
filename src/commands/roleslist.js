@@ -1,5 +1,5 @@
 import { SlashCommandBuilder } from "@discordjs/builders";
-import { MessageEmbed } from "discord.js";
+import { EmbedBuilder, Colors } from "discord.js";
 import { rolesMap } from "../utils/RolesMap.js";
 
 function generateMessage() {
@@ -18,9 +18,9 @@ export default {
         .setName("roleslist")
         .setDescription("List all available topic/language roles you can subscribe to"),
     execute: async function execute(interaction) {
-        let rolesListEmbed = new MessageEmbed()
+        let rolesListEmbed = new EmbedBuilder()
             .setDescription(generateMessage())
-            .setColor("AQUA")
+            .setColor(Colors.Aqua)
             .setTitle("Roles List");
         await interaction.reply({ embeds: [rolesListEmbed], ephemeral: true });
     },

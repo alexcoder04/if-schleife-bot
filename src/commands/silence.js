@@ -1,5 +1,5 @@
 import { channelMention, SlashCommandBuilder } from "@discordjs/builders";
-import { MessageEmbed } from "discord.js";
+import { EmbedBuilder, Colors } from "discord.js";
 import { Logger } from "../utils/Logger.js";
 import silenceManager from "../utils/SilenceManager.js";
 import contains from "../utils/Utils.js";
@@ -20,9 +20,9 @@ export default {
         if (!interaction.member.roles.cache.some(role => role.name === "Admin")) {
             await interaction.deferReply({ ephemeral: true });
 
-            await interaction.editReply({ embeds: [new MessageEmbed()
+            await interaction.editReply({ embeds: [new EmbedBuilder()
                 .setDescription("You don't have the permission to silence this channel")
-                .setColor("RED")] });
+                .setColor(Colors.Red)] });
             return;
         }
 
@@ -33,23 +33,23 @@ export default {
         
         await interaction.deferReply({ ephemeral: true });
 
-        await interaction.editReply({ embeds: [new MessageEmbed()
+        await interaction.editReply({ embeds: [new EmbedBuilder()
             .setDescription("Checking the database for the channel")
-            .setColor("YELLOW")]});
+            .setColor(Colors.Yellow)]});
 
         if (silenceManager.contains(interaction.channelId)) {
             silenceManager.remove(interaction.channelId);
             lg.info(`Unsilenced ${channelMention(interaction.channelId)}`);
-            await interaction.editReply({ embeds: [new MessageEmbed()
+            await interaction.editReply({ embeds: [new EmbedBuilder()
                 .setDescription(`Removed ${channelMention(interaction.channelId)} from the list of channels`)
-                .setColor("RED")]});
+                .setColor(Colors.Red)]});
             
         } else {
             silenceManager.add(interaction.channelId);
             lg.info(`Silenced ${interaction.channelId}`);
-            await interaction.editReply({ embeds: [new MessageEmbed()
+            await interaction.editReply({ embeds: [new EmbedBuilder()
                 .setDescription(`Added ${channelMention(interaction.channelId)} to the list of channels`)
-                .setColor("GREEN")]});
+                .setColor(Colors.Green)]});
         }
     },
     register: true

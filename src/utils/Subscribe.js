@@ -1,7 +1,7 @@
 import { channelMention } from "@discordjs/builders";
-import { MessageEmbed } from "discord.js";
-import { rolesMap } from "../utils/RolesMap.js";
-import { Logger } from "../utils/Logger.js";
+import { EmbedBuilder, Colors } from "discord.js";
+import { rolesMap } from "./RolesMap.js";
+import { Logger } from "./Logger.js";
 
 const lg = new Logger("Subscribe");
 
@@ -11,7 +11,7 @@ async function subscribe(selectedLang, interaction) {
 
     if (!interaction.member.roles.cache.some(role => role.name === "Member")){
         const rulesChannel = await interaction.guild.channels.cache.find(c => c.name === "rules");
-        const acceptRulesEmbed = new MessageEmbed()
+        const acceptRulesEmbed = new EmbedBuilder()
             .setDescription(`You are not a member yet. Please accept the rules in ${channelMention(rulesChannel.id)}`);
 
         await interaction.editReply({ embeds: [acceptRulesEmbed] });
@@ -21,9 +21,9 @@ async function subscribe(selectedLang, interaction) {
     //Find the language in the list of languages
     const validLang = rolesMap.find(l => l.regex.test(selectedLang));
     if (validLang == null || validLang == undefined) {
-        const languageNotFoundEmbed = new MessageEmbed()
+        const languageNotFoundEmbed = new EmbedBuilder()
             .setDescription(`${selectedLang} is not in the list of supported languages.`)
-            .setColor("RED");
+            .setColor(Colors.Red);
         
         await interaction.editReply({ embeds: [languageNotFoundEmbed] });
         return;
@@ -32,9 +32,9 @@ async function subscribe(selectedLang, interaction) {
     //Get the role for the found language
     const role = await interaction.guild.roles.cache.find(r => validLang.regex.test(r.name));
     if (role == undefined) {
-        const roleNotFoundEmbed = new MessageEmbed()
+        const roleNotFoundEmbed = new EmbedBuilder()
             .setDescription(`No role was found for ${validLang.name}.`)
-            .setColor("RED");
+            .setColor(Colors.Red);
         
         await interaction.editReply({ embeds: [roleNotFoundEmbed] });
         return;
@@ -44,9 +44,9 @@ async function subscribe(selectedLang, interaction) {
     const hasRole = interaction.member.roles.cache.find(r => role.id == r.id) != undefined;
     if (hasRole) {
         interaction.member.roles.remove(role);
-        const unsubscribeEmbed = new MessageEmbed()
+        const unsubscribeEmbed = new EmbedBuilder()
             .setDescription(`Unsubscribed you from ${role.name}`)
-            .setColor("GREY");
+            .setColor(Colors.White);
         
         await interaction.editReply({ embeds: [unsubscribeEmbed] });
         lg.info(`Removed ${interaction.member.id} from ${role.name}`);
@@ -55,9 +55,9 @@ async function subscribe(selectedLang, interaction) {
     
     //Otherwise subscribe them to it
     interaction.member.roles.add(role);
-    const subscribeEmbed = new MessageEmbed()
+    const subscribeEmbed = new EmbedBuilder()
         .setDescription(`Subscribed you to ${role.name}`)
-        .setColor("GREY");
+        .setColor(Colors.White);
     
     await interaction.editReply({ embeds: [subscribeEmbed] });
     lg.info(`Added ${interaction.member.id} to ${role.name}`);
