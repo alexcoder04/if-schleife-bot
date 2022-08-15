@@ -16,7 +16,7 @@
     "@discordjs/builders": "^1.1.0",
     "@discordjs/rest": "^1.0.0",
     "discord-api-types": "^0.37.1",
-    "discord.js": "^14.1.2",
+    "discord.js": "^14.2.0",
     "dotenv": "^16.0.1",
     "winston": "^3.8.1",
     "winston-daily-rotate-file": "^4.7.1"
