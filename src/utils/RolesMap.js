@@ -46,5 +46,9 @@ export const rolesMap = [
     {
         name: "Machine Learning",
         regex: /^Machine[\s-]?Learning/i,
+    },
+    {
+        name: "Mobile (Android / iOS)",
+        regex: /^Mobile|iOS|Android|LineageOS|Apps?/i,
     }
 ];

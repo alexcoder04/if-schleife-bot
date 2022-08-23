@@ -6,10 +6,12 @@ updates:
     target-branch: "dev"
     schedule:
       interval: "weekly"
+    open-pull-requests-limit: 15
 
   - package-ecosystem: "docker"
     directory: "/"
     target-branch: "dev"
     schedule:
-        interval: "weekly"
+      interval: "monthly"
+    open-pull-requests-limit: 15
 
