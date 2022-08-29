@@ -15,7 +15,7 @@
   "dependencies": {
     "@discordjs/builders": "^1.1.0",
     "@discordjs/rest": "^1.0.0",
-    "discord-api-types": "^0.37.4",
+    "discord-api-types": "^0.37.5",
     "discord.js": "^14.1.2",
     "dotenv": "^16.0.1",
     "winston": "^3.8.1",
