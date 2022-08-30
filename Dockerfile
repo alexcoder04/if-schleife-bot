@@ -1,4 +1,4 @@
-FROM node:16.6-alpine3.14
+FROM node:17.9.1-alpine3.14
 WORKDIR /usr/src/
 COPY package*.json /
 ENV NODE_ENV=production
