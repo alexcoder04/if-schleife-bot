@@ -33,18 +33,18 @@ export default {
             .setDescription("Checking the database for the channel")
             .setColor(Colors.Yellow)]});
 
-        if (silenceManager.contains(interaction.channelId)) {
-            silenceManager.remove(interaction.channelId);
-            lg.info(`Unsilenced ${channelMention(interaction.channelId)}`);
+        if (silenceManager.contains(channel.id)) {
+            silenceManager.remove(channel.id);
+            lg.info(`Unsilenced ${channelMention(channel.id)}`);
             await interaction.editReply({ embeds: [new EmbedBuilder()
-                .setDescription(`Removed ${channelMention(interaction.channelId)} from the list of channels`)
+                .setDescription(`Removed ${channelMention(channel.id)} from the list of channels`)
                 .setColor(Colors.Red)]});
             
         } else {
-            silenceManager.add(interaction.channelId);
-            lg.info(`Silenced ${interaction.channelId}`);
+            silenceManager.add(channel.id);
+            lg.info(`Silenced ${channel.id}`);
             await interaction.editReply({ embeds: [new EmbedBuilder()
-                .setDescription(`Added ${channelMention(interaction.channelId)} to the list of channels`)
+                .setDescription(`Added ${channelMention(channel.id)} to the list of channels`)
                 .setColor(Colors.Green)]});
         }
     },
