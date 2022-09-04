@@ -31,6 +31,14 @@ class SilenceManager {
     get() {
         return this.#data;
     }
+
+    clear(channel) {
+        channel.messages.fetch({ limit: 100 }).then(messages => {
+            messages.forEach(message => {
+                message.delete();
+            });
+        });
+    }
 }
 
 export default new SilenceManager();

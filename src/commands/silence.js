@@ -15,6 +15,11 @@ export default {
             option.setName("channel")
                 .setDescription("The channel to be silenced. (By default the channel you are sending this from)")
                 .setRequired(false)
+        )
+        .addBooleanOption(option => 
+            option.setName("clear")
+                .setDescription("Clear past message history")
+                .setRequired(false)
         ),
 
     execute: async function execute(interaction) {
@@ -30,7 +35,7 @@ export default {
         await interaction.deferReply({ ephemeral: true });
 
         await interaction.editReply({ embeds: [new EmbedBuilder()
-            .setDescription("Checking the database for the channel")
+            .setDescription("Checking the database for the channel...")
             .setColor(Colors.Yellow)]});
 
         if (silenceManager.contains(channel.id)) {
@@ -41,6 +46,13 @@ export default {
                 .setColor(Colors.Red)]});
             
         } else {
+            if (interaction.options.getBoolean("clear")) {
+                await interaction.editReply({ embeds: [new EmbedBuilder()
+                    .setDescription("Clearing message history...")
+                    .setColor(Colors.Yellow)]});
+                silenceManager.clear(channel);
+            }
+
             silenceManager.add(channel.id);
             lg.info(`Silenced ${channel.id}`);
             await interaction.editReply({ embeds: [new EmbedBuilder()
