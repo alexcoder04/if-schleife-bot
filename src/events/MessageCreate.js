@@ -21,6 +21,24 @@ export default {
         if (silenceManager.contains(message.channelId)) {
             await message.delete();
             lg.info(`[${message.guild.name} - Removed message by ${message.author.username} in ${message.channel.name}]`);
+            return;
+        }
+
+        if (message.channel.name == "random") {
+            let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            let str = "";
+            for (let i = 0; i < 64; i++) {
+                str += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            message.channel.send(str);
+            message.delete();
+            return;
+        }
+
+        if (message.channel.name == "zero") {
+            message.channel.send("0000000000000000000000000000000000000000000000000000000000000000");
+            message.delete();
+            return;
         }
     }
 };

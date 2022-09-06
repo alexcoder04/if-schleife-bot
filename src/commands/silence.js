@@ -15,6 +15,11 @@ export default {
             option.setName("channel")
                 .setDescription("The channel to be silenced. (By default the channel you are sending this from)")
                 .setRequired(false)
+        )
+        .addBooleanOption(option => 
+            option.setName("clear")
+                .setDescription("Clear past message history")
+                .setRequired(false)
         ),
 
     execute: async function execute(interaction) {
@@ -30,21 +35,28 @@ export default {
         await interaction.deferReply({ ephemeral: true });
 
         await interaction.editReply({ embeds: [new EmbedBuilder()
-            .setDescription("Checking the database for the channel")
+            .setDescription("Checking the database for the channel...")
             .setColor(Colors.Yellow)]});
 
-        if (silenceManager.contains(interaction.channelId)) {
-            silenceManager.remove(interaction.channelId);
-            lg.info(`Unsilenced ${channelMention(interaction.channelId)}`);
+        if (silenceManager.contains(channel.id)) {
+            silenceManager.remove(channel.id);
+            lg.info(`Unsilenced ${channelMention(channel.id)}`);
             await interaction.editReply({ embeds: [new EmbedBuilder()
-                .setDescription(`Removed ${channelMention(interaction.channelId)} from the list of channels`)
+                .setDescription(`Removed ${channelMention(channel.id)} from the list of channels`)
                 .setColor(Colors.Red)]});
             
         } else {
-            silenceManager.add(interaction.channelId);
-            lg.info(`Silenced ${interaction.channelId}`);
+            if (interaction.options.getBoolean("clear")) {
+                await interaction.editReply({ embeds: [new EmbedBuilder()
+                    .setDescription("Clearing message history...")
+                    .setColor(Colors.Yellow)]});
+                silenceManager.clear(channel);
+            }
+
+            silenceManager.add(channel.id);
+            lg.info(`Silenced ${channel.id}`);
             await interaction.editReply({ embeds: [new EmbedBuilder()
-                .setDescription(`Added ${channelMention(interaction.channelId)} to the list of channels`)
+                .setDescription(`Added ${channelMention(channel.id)} to the list of channels`)
                 .setColor(Colors.Green)]});
         }
     },
