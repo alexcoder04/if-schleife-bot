@@ -59,6 +59,7 @@ will appreciate if you credit us in that case).
  - assign project-/topic-specific roles with `/subscribe`
  - list all available roles with `/roleslist`
  - silence channels with `/silence` (`/dev/null` emulation :))
+ - `/dev/random` and `/dev/zero` emulation, as well :)
  - notification via webhooks if the bot crashed
 
 ## Installation and updates
