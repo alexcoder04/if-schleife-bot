@@ -49,6 +49,10 @@ export const rolesMap = [
     },
     {
         name: "Mobile (Android / iOS)",
-        regex: /^Mobile|iOS|Android|LineageOS|Apps?/i,
+        regex: /^Mobile|^iOS|^Android|^LineageOS|^Apps?/i,
+    },
+    {
+        name: "Algorithms / Theory",
+        regex: /^Algorithms?|^Theory|^Binary tree/i,
     }
 ];
