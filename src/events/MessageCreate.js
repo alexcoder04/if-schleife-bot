@@ -9,11 +9,6 @@ export default {
         // return if the message is not interesting
         if (message.author.bot) return;
         if (message.system) return;
-        if (message.attachments.size > 0) {
-            message.attachments.forEach(element => {
-                lg.info(`${message.author.username} has sent an attachment: ${element.url}`);
-            });
-        }
 
         // remove messages in silenced channels
         if (silenceManager.contains(message.channelId)) {
