@@ -61,6 +61,7 @@ will appreciate if you credit us in that case).
  - silence channels with `/silence` (`/dev/null` emulation :))
  - `/dev/random` and `/dev/zero` emulation, as well :)
  - notification via webhooks if the bot crashed
+ - code execution and printing its output (using [Piston](https://github.com/engineer-man/piston))
 
 ## Installation and updates
 

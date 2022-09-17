@@ -7,7 +7,7 @@ const lg = new Logger("Index");
 
 const TOKEN = process.env.TOKEN;
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages ] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent ] });
 client.commands = new Collection();
 
 /**

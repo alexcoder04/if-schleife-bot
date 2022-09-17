@@ -1,12 +1,12 @@
-import { Logger } from "../utils/Logger.js";
+import { EmbedBuilder } from "discord.js";
+import { runCode } from "../utils/CodeExecutor.js";
 import silenceManager from "../utils/SilenceManager.js";
-
-const lg = new Logger("CHAT");
 
 export default {
     name: "messageCreate",
     execute: async function execute(message) {
 
+        // return if the message is not interesting
         if (message.author.bot) return;
         if (message.system) return;
         if (message.attachments.size > 0) {
@@ -14,16 +14,14 @@ export default {
                 lg.info(`${message.author.username} has sent an attachment: ${element.url}`);
             });
         }
-        if (message.content != "") {
-            lg.info(`[${message.guild.name} - ${message.channel.name}] ${message.author.username}: ${message.content}`);
-        }
 
+        // remove messages in silenced channels
         if (silenceManager.contains(message.channelId)) {
             await message.delete();
-            lg.info(`[${message.guild.name} - Removed message by ${message.author.username} in ${message.channel.name}]`);
             return;
         }
 
+        // /dev/random
         if (message.channel.name == "random") {
             let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             let str = "";
@@ -35,10 +33,28 @@ export default {
             return;
         }
 
+        // /dev/zero
         if (message.channel.name == "zero") {
             message.channel.send("0000000000000000000000000000000000000000000000000000000000000000");
             message.delete();
             return;
+        }
+
+        // run code posted in the #bot channel
+        if (message.channel.name.endsWith("bot")) {
+            if (/^```.*\n.*\n```\s*!$/is.test(message.content)) {
+                const lines = message.content.split("\n");
+                let language = lines[0].replace("```", "");
+                const code = lines.slice(1, lines.length - 1).join("\n");
+                if (language == "js") {
+                    language = "javascript";
+                }
+                message.reply(`
+**Your code's output**:
+\`\`\`text
+${await runCode(code, language)}
+\`\`\``);
+            }
         }
     }
 };
