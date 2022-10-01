@@ -1,6 +1,6 @@
 
 <p align="center">
-    <img src="https://www.namijda.de/images/product_images/popup_images/kobalt_10.jpg" width="150" style="border-radius: 20px;">
+    <img src="https://www.namijda.de/images/product_images/popup_images/kobalt_10.jpg" width="150">
 </p>
 
 <h2 align="center"><b>if-schleife-bot</b></h2>
@@ -56,6 +56,7 @@ will appreciate if you credit us in that case).
 
 ### Features
 
+ - assign a "member" role when the user accepted the server rules
  - assign project-/topic-specific roles with `/subscribe`
  - list all available roles with `/roleslist`
  - silence channels with `/silence` (`/dev/null` emulation :))
@@ -81,6 +82,7 @@ Please note that the `main` branch is aimed for production, so all development
 happens in the `dev` branch.
 
 To contribute to the dev branch first:
+
 Clone the repo
 
 `git clone https://github.com/alexcoder04/if-schleife-bot`
