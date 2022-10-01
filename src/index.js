@@ -1,4 +1,4 @@
-import { Client, Collection, GatewayIntentBits } from "discord.js";
+import { Client, Collection, GatewayIntentBits, Partials } from "discord.js";
 import * as fs from "fs";
 import "dotenv/config";
 import { Logger } from "./utils/Logger.js";
@@ -7,7 +7,10 @@ const lg = new Logger("Index");
 
 const TOKEN = process.env.TOKEN;
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent ] });
+const client = new Client({
+    intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMessageReactions ],
+    partials: [Partials.Message, Partials.Reaction]
+});
 client.commands = new Collection();
 
 /**
