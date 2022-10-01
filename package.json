@@ -14,9 +14,9 @@
   "license": "GPL-3.0-or-later",
   "dependencies": {
     "@discordjs/builders": "^1.2.0",
-    "@discordjs/rest": "^1.1.0",
-    "discord-api-types": "^0.37.9",
-    "discord.js": "^14.3.0",
+    "@discordjs/rest": "^1.2.0",
+    "discord-api-types": "^0.37.10",
+    "discord.js": "^14.5.0",
     "dotenv": "^16.0.2",
     "piston-client": "^1.0.2",
     "winston": "^3.8.2",
@@ -24,6 +24,6 @@
   },
   "type": "module",
   "devDependencies": {
-    "eslint": "^8.23.1"
+    "eslint": "^8.24.0"
   }
 }
