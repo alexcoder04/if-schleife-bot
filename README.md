@@ -66,6 +66,22 @@ will appreciate if you credit us in that case).
 
 ## Installation and updates
 
+## With npm
+
+Install/update dependencies
+> `npm i`
+
+Deploy slash commands
+> `npm run deployCommands`
+
+Start in normal mode
+> `npm start`
+
+Or in development mode (restarts on file changes)
+> `npm run devStart`
+
+## With Docker
+
 Build the docker application
 > `docker build -t if-schleife-bot .`
 
@@ -78,22 +94,17 @@ We are generally open for any kind of contributions, however, as this a project
 aimed for a specific Discord server, we will check if your idea makes sense in
 our case.
 
-Please note that the `main` branch is aimed for production, so all development
-happens in the `dev` branch.
+Please note that the `main` branch is stable and aimed for production,
+so all development happens in the `dev` branch (keep this in mind
+if you open pull requests!).
 
-To contribute to the dev branch first:
+So, if you want to contribute, work on the `dev` branch.
 
-Clone the repo
+See all branches
+> `git branch -a`
 
-`git clone https://github.com/alexcoder04/if-schleife-bot`
-
-Check to see all branches
-
-`git branch -a`
-
-Switch to the correct branch you want to contribute to
-
-`git checkout dev`
+Switch to `dev` branch
+> `git checkout dev`
 
 ## License
 

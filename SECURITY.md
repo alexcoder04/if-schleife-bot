@@ -1,11 +1,11 @@
 
 # Security Policy
 
-## Supported versions and our workflow
+## Supported versions and our development workflow
 
 The `main` branch is our stable production branch, which is generally
-recommended to use. Severe vulnerabilities bypass the normal workflow with
-the `dev` branch and are patched directly into `main` via a hotfix.
+recommended to use. Severe vulnerabilities bypass the normal workflow via
+the `dev` branch and are patched directly into `main` with a hotfix.
 
 ## Reporting vulnerabilities
 
