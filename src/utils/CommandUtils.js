@@ -1,4 +1,3 @@
-import * as cp from "child_process";
 
 function getRoleByName(interaction, name) {
     return interaction.guild.roles.cache.find(r => r.name === name);

@@ -77,7 +77,7 @@ Deploy slash commands
 Start in normal mode
 > `npm start`
 
-Or in development mode (restarts on file changes)
+Or in development mode (restarts on file changes, requires `nodemon`)
 > `npm run devStart`
 
 ## With Docker

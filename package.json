@@ -2,7 +2,7 @@
   "name": "if-schleife-bot",
   "version": "1.0.0",
   "description": "custom bot for the if-schleife discord server",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
     "devStart": "nodemon -i silenced.json src/index.js",
