@@ -54,5 +54,13 @@ export const rolesMap = [
     {
         name: "Algorithms / Theory",
         regex: /^Algorithms?|^Theory|^Binary tree/i,
+    },
+    {
+        name: "BwInf",
+        regex: /BwInf|Bundeswettbewerb([\s-]?Informatik)?/i
+    },
+    {
+        name: "Jugend Forscht",
+        regex: /Jugend[\s-]?Forscht|JuFo|JF/i
     }
 ];
