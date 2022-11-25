@@ -10,7 +10,7 @@ const lg = new Logger("Silence");
 export default {
     data: new SlashCommandBuilder()
         .setName("silence")
-        .setDescription("Silences a channel and deletes all new incoming messages.")
+        .setDescription("[admin only] Silences a channel and deletes all new incoming messages.")
         .addChannelOption(option => 
             option.setName("channel")
                 .setDescription("The channel to be silenced. (By default the channel you are sending this from)")
