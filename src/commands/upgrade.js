@@ -24,7 +24,7 @@ export default {
             return;
         }
 
-        await interaction.reply({
+        await interaction.editReply({
             embeds: [ new EmbedBuilder()
                 .setTitle("Restarting the bot")
                 .setColor(Colors.DarkGrey) ],
