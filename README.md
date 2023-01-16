@@ -33,6 +33,8 @@
     </a>
 </p>
 
+<h2 align="center">WARNING: Project currently on hold!</h2>
+
 <p align="center">
     <a href="#description">Description</a> &bull; 
     <a href="#features">Features</a> &bull; 
