@@ -10,31 +10,6 @@ export default {
         if (message.author.bot) return;
         if (message.system) return;
 
-        // remove messages in silenced channels
-        if (silenceManager.contains(message.channelId)) {
-            await message.delete();
-            return;
-        }
-
-        // /dev/random
-        if (message.channel.name == "random") {
-            let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-            let str = "";
-            for (let i = 0; i < 64; i++) {
-                str += chars.charAt(Math.floor(Math.random() * chars.length));
-            }
-            message.channel.send(str);
-            message.delete();
-            return;
-        }
-
-        // /dev/zero
-        if (message.channel.name == "zero") {
-            message.channel.send("0000000000000000000000000000000000000000000000000000000000000000");
-            message.delete();
-            return;
-        }
-
         // run code posted in the #bot channel
         if (message.channel.name.endsWith("bot")) {
             if (/^```.*\n.*\n```\s*!$/is.test(message.content)) {

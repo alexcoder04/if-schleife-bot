@@ -1,8 +1,4 @@
 
-<p align="center">
-    <img src="https://www.namijda.de/images/product_images/popup_images/kobalt_10.jpg" width="150">
-</p>
-
 <h2 align="center"><b>if-schleife-bot</b></h2>
 
 <h4 align="center"><b>Feature rich discord bot for the if-schleife discord server.</b></b></h4>
@@ -37,6 +33,8 @@
     </a>
 </p>
 
+<h2 align="center">WARNING: Project currently on hold!</h2>
+
 <p align="center">
     <a href="#description">Description</a> &bull; 
     <a href="#features">Features</a> &bull; 
@@ -56,11 +54,6 @@ will appreciate if you credit us in that case).
 
 ### Features
 
- - assign a "member" role when the user accepted the server rules
- - assign project-/topic-specific roles with `/subscribe`
- - list all available roles with `/roleslist`
- - silence channels with `/silence` (`/dev/null` emulation :))
- - `/dev/random` and `/dev/zero` emulation, as well :)
  - notification via webhooks if the bot crashed
  - code execution and printing its output (using [Piston](https://github.com/engineer-man/piston))
  - [dioggy](https://github.com/alexcoder04/dioggy) integration
