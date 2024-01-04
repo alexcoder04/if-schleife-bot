@@ -33,7 +33,7 @@
     </a>
 </p>
 
-<h2 align="center">WARNING: Project currently on hold!</h2>
+<h2 align="center">Project archived as of January 2024</h2>
 
 <p align="center">
     <a href="#description">Description</a> &bull; 
